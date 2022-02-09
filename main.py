@@ -9,7 +9,9 @@ ws = wb.active
 
 # Aktif çalışma sayfasının adını yazdırma
 print(wb.sheetnames)
-print(ws.cell(2,2).value)
+for x in range(2, 90):
+  print(ws.cell(x,2).value)
+
 #
 # os.chdir(sys.path[0])
 # doc = DocxTemplate("Template.docx")
