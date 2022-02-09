@@ -3,3 +3,7 @@
 - Word dokumanının içinde {{yuklenecek yer}} şeklinde eklenmesi gereken alanlar belirlenmesi gerekmektedir. Aşağıda gösterildiği gibidir.
 
 ![image](https://user-images.githubusercontent.com/12711258/153245386-4e099708-829c-4ec9-9628-14dad11c79cd.png)
+
+Daha sonrasıda code ayarlaması yapılabilir. ve aşağıdaki alanlar doldurularak şablon oluşturulup pdf dönüşüm sağlanır.
+
+![image](https://user-images.githubusercontent.com/12711258/153246159-5ee4b427-c617-4571-9a1c-1dfee9888db7.png)
