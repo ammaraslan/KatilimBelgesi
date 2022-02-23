@@ -5,9 +5,9 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 def mailGonder(alici,dosyaadi):
-    fromaddr = "bilgisayar.teknolojileri.btu@gmail.com"
+    fromaddr = "mail@gmail.com"
     toaddr = alici
-    sifre = "Aaslan3..."
+    sifre = "sifre"
     msg = MIMEMultipart()
 
     msg['From'] = fromaddr
