@@ -2,11 +2,13 @@
 - Bu çalışmada excelden veri okunup bir word şablonuna veri aktarımı yapılmaktadır. Daha sonrasında şablon pdf'ye dönüştürülüp yine excelde bulunan alana göre mail atmaktadır.
 
 # İçindekiler
--Eposta gönderme 
--Word belgesini pdf dönüşütrme
--Excelde veri okuma
--Şablon bir word dosyasına dinamik veri aktarma yapılmaktadır.
 
+- Eposta gönderme 
+- Word belgesini pdf dönüşütrme
+- Excelde veri okuma
+- Şablon bir word dosyasına dinamik veri aktarma yapılmaktadır.
+
+# Çalışma prensibi
 - Word dokumanının içinde {{yuklenecek yer}} şeklinde eklenmesi gereken alanlar belirlenmesi gerekmektedir. Aşağıda gösterildiği gibidir.
 ![image](https://user-images.githubusercontent.com/12711258/153245386-4e099708-829c-4ec9-9628-14dad11c79cd.png)
 
