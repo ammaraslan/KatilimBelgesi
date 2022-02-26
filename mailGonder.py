@@ -4,36 +4,46 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
+# Google Güvenli erişim kapatılması gerekmektedir. Aşağıdaki linlten kapatabilirsiniz.
+# https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4PvBJSlJA155OqwhiSPaFe9OzLSvMoZn2clBmlUTOf42XxQIr4mcMx3iOM2eBINvLw8vk1fzhVvCIGgvrNStlCZoGkPxg
+
 def mailGonder(alici,dosyaadi):
-    fromaddr = "mail@gmail.com"
-    toaddr = alici
-    sifre = "sifre"
-    msg = MIMEMultipart()
 
-    msg['From'] = fromaddr
-    msg['To'] = toaddr
-    msg['Subject'] = "IIC2022"
+    gonderecelMail = "mailadresiniz@gmail.com"
+    sifre = "sifreniz"
+    ileti = MIMEMultipart()
 
-    body = "IIC 2022"
+    ileti['From'] = gonderecelMail
+    ileti['To'] = alici
+    ileti['Subject'] = "IIC2022"
+    icerik = '''Dear Participant,
+    
+The article you submitted for IIC2022 Congress was accepted as a result of the review process.
 
-    msg.attach(MIMEText(body, 'plain'))
+You can see acceptance letter in this email’s attachment.
 
-    filename = dosyaadi
-    attachment = open(filename, "rb")
+
+Sincerly. '''
+
+    ileti.attach(MIMEText(icerik, 'plain'))
+    attachment = open("pdf/"+dosyaadi, "rb")
 
     part = MIMEBase('application', 'octet-stream')
-    part.set_payload((attachment).read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 
-    msg.attach(part)
+    part.set_payload((attachment).read())
+
+    encoders.encode_base64(part)
+
+    part.add_header('Content-Disposition', "attachment; filename= %s" % dosyaadi)
+
+    ileti.attach(part)
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, sifre)
-    text = msg.as_string()
+    server.login(gonderecelMail, sifre)
+    text = ileti.as_string()
     try:
-        server.sendmail(fromaddr, toaddr, text)
+        server.sendmail(gonderecelMail, alici, text)
         server.quit()
         print("Başarılı bir şekilde gönderildi")
     except:
