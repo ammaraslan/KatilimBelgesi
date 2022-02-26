@@ -3,10 +3,12 @@
 
 # İçindekiler
 
-- Eposta gönderme 
+
 - Word belgesini pdf dönüşütrme
 - Excelde veri okuma
 - Şablon bir word dosyasına dinamik veri aktarma yapılmaktadır.
+- Eposta gönderme
+- Türkçe karekterleri eng karakterlere dönüştürme 
 
 # Çalışma prensibi
 - Word dokumanının içinde {{yuklenecek yer}} şeklinde eklenmesi gereken alanlar belirlenmesi gerekmektedir. Aşağıda gösterildiği gibidir.
