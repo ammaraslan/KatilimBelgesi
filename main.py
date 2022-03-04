@@ -12,7 +12,7 @@ ws = wb.active
 
 # Aktif çalışma sayfasının adını yazdırma
 # print(wb.sheetnames)
-for veri in range(2, 3):  # 127 kişi olacka
+for veri in range(2,5):  # 128 kişi olacak
     adiSoyadi = ws.cell(veri, 2).value
     kisiAdi = adiSoyadi
     universitesi = ws.cell(veri, 3).value
@@ -25,7 +25,7 @@ for veri in range(2, 3):  # 127 kişi olacka
         "adsoyad": adiSoyadi,
         "baslik": baslik,
         "universite": universitesi,
-        "tarih": tarih.datetime.strftime(date, '%d %B %Y')
+        "tarih": "28 February 2022",
     }
 
     doc.render(context)
@@ -36,6 +36,6 @@ for veri in range(2, 3):  # 127 kişi olacka
     dosyaadi = str(veri - 1) + "_" + adiSoyadi + " IIC2022 " + "Kabul Mektubu" + ".pdf"
     convert("word/" + dokumanAdi, "pdf/" + dosyaadi)
     print(kisiAdi + " Adlı Kişiye Eposta Gönderilecektir.")
-    mailGonder.mailGonder(gonderilecekMail, dosyaadi)
+    #mailGonder.mailGonder(gonderilecekMail, dosyaadi)
 
 print("Tüm İşlem Tamamlandı.")

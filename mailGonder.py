@@ -4,18 +4,18 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
+
 # Google Güvenli erişim kapatılması gerekmektedir. Aşağıdaki linlten kapatabilirsiniz.
 # https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4PvBJSlJA155OqwhiSPaFe9OzLSvMoZn2clBmlUTOf42XxQIr4mcMx3iOM2eBINvLw8vk1fzhVvCIGgvrNStlCZoGkPxg
 
-def mailGonder(alici,dosyaadi):
-
-    gonderecelMail = "mailadresiniz@gmail.com"
-    sifre = "sifreniz"
+def mailGonder(alici, dosyaadi):
+    gonderecelMail = "bilgisayar.teknolojileri.btu@gmail.com"
+    sifre = ""
     ileti = MIMEMultipart()
 
     ileti['From'] = gonderecelMail
     ileti['To'] = alici
-    ileti['Subject'] = "IIC2022"
+    ileti['Subject'] = "Your paper has been accepted"
     icerik = '''Dear Participant,
     
 The article you submitted for IIC2022 Congress was accepted as a result of the review process.
@@ -26,7 +26,7 @@ You can see acceptance letter in this email’s attachment.
 Sincerly. '''
 
     ileti.attach(MIMEText(icerik, 'plain'))
-    attachment = open("pdf/"+dosyaadi, "rb")
+    attachment = open("pdf/" + dosyaadi, "rb")
 
     part = MIMEBase('application', 'octet-stream')
 
@@ -47,4 +47,4 @@ Sincerly. '''
         server.quit()
         print("Başarılı bir şekilde gönderildi")
     except:
-        print("Gönderme Başarısız",alici)
+        print("Gönderme Başarısız", alici)
